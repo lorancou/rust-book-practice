@@ -1,6 +1,7 @@
 [package]
-name = "hello_cargo"
+name = "hello-cargo"
 version = "0.1.0"
 authors = ["Laurent Couvidou <lorancou@free.fr>"]
+edition = "2018"
 
 [dependencies]
