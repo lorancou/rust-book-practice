@@ -21,17 +21,17 @@ fn main() {
         Ok(n) => n,
         Err(_) => {
             println!("First argument must be a number.");
-	        println!("Usage: degrees <n> <°C|°F>");
+            println!("Usage: degrees <n> <°C|°F>");
             return;
         }
     };
 
     match args[2].as_str() {
-	    "°C" => println!("{} °C = {} °F", n, to_fahrenheit(n)),
-	    "°F" => println!("{} °F = {} °C", n, to_celsius(n)),
-	    _ => {
+        "°C" => println!("{} °C = {} °F", n, to_fahrenheit(n)),
+        "°F" => println!("{} °F = {} °C", n, to_celsius(n)),
+        _ => {
             println!("Second argument must be \"°C\" or \"°F\".");
-	        println!("Usage: degrees <n> <°C|°F>");
-	    },
+            println!("Usage: degrees <n> <°C|°F>");
+        },
     }
 }
