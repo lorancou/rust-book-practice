@@ -33,15 +33,16 @@ fn main() {
         "Twelve drummers drumming,"
     ];
 
-    for i in 0..DAY_COUNT {
+    // Day 1
+    println!("On the {} day of Christmas my true love sent to me", ORDINALS[0]);
+    println!("A partridge in a pear tree."); // That one's without the "and"
+    println!("");
+
+    // Days 2+
+    for i in 1..DAY_COUNT {
         println!("On the {} day of Christmas my true love sent to me", ORDINALS[i]);
-        if i == 0 {
-            // Not sure if there's a more elegant way to handle that exception
-            println!("A partridge in a pear tree.");
-        } else {
-            for j in (0..i+1).rev() {
-                println!("{}", PRESENTS[j]);
-            }
+        for j in (0..i+1).rev() {
+            println!("{}", PRESENTS[j]);
         }
         println!("");
     }
