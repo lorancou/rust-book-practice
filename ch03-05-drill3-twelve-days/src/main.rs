@@ -1,13 +1,10 @@
 fn main() {
-    // Day 1
-    println!("On the first day of Christmas my true love sent to me");
-    println!("A partridge in a pear tree.");
-    println!("");
+    // Lyrics taken from https://en.wikipedia.org/wiki/The_Twelve_Days_of_Christmas_(song)
 
     const DAY_COUNT : usize = 12;
 
-    // Not sure how to make that const (is that even possible?)
-    let numerals = [
+    const ORDINALS : [&str; DAY_COUNT] = [
+        "first",
         "second",
         "third",
         "fourth",
@@ -20,10 +17,8 @@ fn main() {
         "eleventh",
         "twelfth"
     ];
-    assert_eq!(numerals.len(), DAY_COUNT-1);
-    
-    // Same
-    let presents = [
+
+    const PRESENTS : [&str; DAY_COUNT] = [
         "And a partridge in a pear tree.",
         "Two turtle doves,",
         "Three french hens,",
@@ -37,13 +32,16 @@ fn main() {
         "Eleven pipers piping,",
         "Twelve drummers drumming,"
     ];
-    assert_eq!(presents.len(), DAY_COUNT);
 
-    // Days 2+
-    for i in 0..DAY_COUNT-1 {
-        println!("On the {} day of Christmas my true love sent to me", numerals[i]);
-        for j in (0..i+2).rev() {
-            println!("{}", presents[j]);
+    for i in 0..DAY_COUNT {
+        println!("On the {} day of Christmas my true love sent to me", ORDINALS[i]);
+        if i == 0 {
+            // Not sure if there's a more elegant way to handle that exception
+            println!("A partridge in a pear tree.");
+        } else {
+            for j in (0..i+1).rev() {
+                println!("{}", PRESENTS[j]);
+            }
         }
         println!("");
     }
