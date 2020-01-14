@@ -8,13 +8,13 @@ fn to_celsius(fahrenheit : f64) -> f64 {
 fn main() {
     let mut fahrenheit = String::new();
 
-    println!("Fahrenheit?");
+    println!("Enter a temperature in Fahrenheit:");
 
     io::stdin().read_line(&mut fahrenheit)
         .expect("Failed to read line");
 
-    let fahrenheit: f64 = fahrenheit.trim().parse().
-        expect("Not a number");
+    let fahrenheit: f64 = fahrenheit.trim().parse()
+    	.expect("Not a number");
 
-    println!("Celsius: {}", to_celsius(fahrenheit));
+    println!("In Celsius: {}", to_celsius(fahrenheit));
 }
