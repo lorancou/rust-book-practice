@@ -5,7 +5,6 @@ fn main() {
         // do more stuff with s
     } // this scope is now over, and s is no longer valid
 
-
     {
         let mut s = String::from("hello");
         s.push_str(", world!"); // push_str() appends a literal to a String
@@ -31,14 +30,15 @@ fn main() {
         let x = 42; // x comes into scope
         makes_copy(x); // x would move into the function,
         // but i32 is Copy, so it’s okay to still use x afterward
-
     } // Here, x goes out of scope, then s. But because s's value was moved, nothing special happens.
 
     {
         let _s1 = gives_ownership(); // gives_ownership moves its return value into s1
         let _s2 = String::from("hello"); // s2 comes into scope
         let _s3 = takes_and_gives_back(_s2); // s2 is moved into takes_and_gives_back, which also moves its return value into s3
-    } // Here, _s3 goes out of scope and is dropped. _s2 goes out of scope but was moved, so nothing happens. _s1 goes out of scope and is dropped.
+    } // Here, _s3 goes out of scope and is dropped.
+      // _s2 goes out of scope but was moved, so nothing happens.
+      // _s1 goes out of scope and is dropped.
 
     {
         // What we'd have to do if there was no references in Rust
