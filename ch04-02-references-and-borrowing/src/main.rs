@@ -50,7 +50,7 @@ fn dangle() -> &String { // dangle returns a reference to a String
   // Danger!
 */
 
-  fn no_dangle() -> String {
+fn no_dangle() -> String {
     let s = String::from("hello");
     s
 }
