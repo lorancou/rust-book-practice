@@ -2,7 +2,7 @@
 
 This is a repository of the code practice bits in *The Rust Programming Language*: https://doc.rust-lang.org/book/. Each directory corresponds to a chapter of the book, with a Cargo package where applicable.
 
-Everything should compile and run by default, without warning:
+Everything should compile and run, without warning:
   - Code samples that are not functional are commented out.
   - Unused variables are prefixed with an underscore.
 
