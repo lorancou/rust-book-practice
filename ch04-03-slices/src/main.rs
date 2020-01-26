@@ -3,6 +3,18 @@ fn main() {
 
     let mut s = String::from("hello world");
 
+    fn first_word_as_index(s: &String) -> usize {
+        let bytes = s.as_bytes();
+
+        for (i, &item) in bytes.iter().enumerate() {
+            if item == b' ' {
+                return i;
+            }
+        }
+
+        s.len()
+    }
+
     let _word = first_word_as_index(&s); // word will get the value 5
 
     s.clear(); // this empties the String, making it equal to ""
@@ -23,6 +35,18 @@ fn main() {
 
     println!("{} {}", hello, world);
 
+    fn first_word_as_slice(s: &String) -> &str {
+        let bytes = s.as_bytes();
+
+        for (i, &item) in bytes.iter().enumerate() {
+            if item == b' ' {
+                return &s[0..i];
+            }
+        }
+
+        &s[..]
+    }
+
     let word = first_word_as_slice(&s);
 
     println!("the first word is: {}", word);
@@ -33,6 +57,18 @@ fn main() {
     // String Slices as Parameters
 
     let my_string = String::from("hello world");
+
+    fn first_word_slice_to_slice(s: &str) -> &str {
+        let bytes = s.as_bytes();
+
+        for (i, &item) in bytes.iter().enumerate() {
+            if item == b' ' {
+                return &s[0..i];
+            }
+        }
+
+        &s[..]
+    }
 
     // first_word works on slices of `String`s
     let _word = first_word_slice_to_slice(&my_string[..]);
@@ -50,40 +86,4 @@ fn main() {
 
     let a = [1, 2, 3, 4, 5];
     let _slice = &a[1..3];
-}
-
-fn first_word_as_index(s: &String) -> usize {
-    let bytes = s.as_bytes();
-
-    for (i, &item) in bytes.iter().enumerate() {
-        if item == b' ' {
-            return i;
-        }
-    }
-
-    s.len()
-}
-
-fn first_word_as_slice(s: &String) -> &str {
-    let bytes = s.as_bytes();
-
-    for (i, &item) in bytes.iter().enumerate() {
-        if item == b' ' {
-            return &s[0..i];
-        }
-    }
-
-    &s[..]
-}
-
-fn first_word_slice_to_slice(s: &str) -> &str {
-    let bytes = s.as_bytes();
-
-    for (i, &item) in bytes.iter().enumerate() {
-        if item == b' ' {
-            return &s[0..i];
-        }
-    }
-
-    &s[..]
 }
