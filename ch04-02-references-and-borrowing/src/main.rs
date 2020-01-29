@@ -1,3 +1,5 @@
+#![allow(unused_variables)]
+
 fn main() {
     // References and Borrowing
 
@@ -23,13 +25,13 @@ fn main() {
     change(&mut s);
     println!("{}",s);
 
-    let _r1 = &mut s;
-    let _r2 = &mut s; 
+    let r1 = &mut s;
+    let r2 = &mut s; 
     //println!("{}, {}", r1, r2); // [E0499]: cannot borrow `s` as mutable more than once at a time
 
-    let _r1 = &s; // no problem
-    let _r2 = &s; // no problem
-    let _r3 = &mut s; // BIG PROBLEM
+    let r1 = &s; // no problem
+    let r2 = &s; // no problem
+    let r3 = &mut s; // BIG PROBLEM
     //println!("{}, {}, and {}", r1, r2, r3); // [E0502]: cannot borrow `s` as mutable because it is also borrowed as immutable
 
     let r1 = &s; // no problem

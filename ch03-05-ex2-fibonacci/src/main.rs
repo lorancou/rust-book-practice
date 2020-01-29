@@ -19,7 +19,7 @@ fn main() {
     };
 
     let mut pair = (0, 1);
-    for _i in 0..n {
+    for _ in 0..n {
         pair = (pair.1, pair.0+pair.1);
     }
     println!("Fibonacci: {}", pair.0);

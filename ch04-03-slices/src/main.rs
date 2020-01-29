@@ -1,3 +1,5 @@
+#![allow(unused_variables)]
+
 fn main() {
     // The Slice Type
 
@@ -15,7 +17,7 @@ fn main() {
         s.len()
     }
 
-    let _word = first_word_as_index(&s); // word will get the value 5
+    let word = first_word_as_index(&s); // word will get the value 5
 
     s.clear(); // this empties the String, making it equal to ""
 
@@ -26,11 +28,11 @@ fn main() {
 
     let s = String::from("hello world");
 
-    let _hello = &s[0..5];
+    let hello = &s[0..5];
     let hello = &s[..5]; // same
 
     let len = s.len();
-    let _world = &s[6..len];
+    let world = &s[6..len];
     let world = &s[6..]; // same
 
     println!("{} {}", hello, world);
@@ -71,19 +73,19 @@ fn main() {
     }
 
     // first_word works on slices of `String`s
-    let _word = first_word_slice_to_slice(&my_string[..]);
+    let word = first_word_slice_to_slice(&my_string[..]);
 
     let my_string_literal = "hello world";
 
     // first_word works on slices of string literals
-    let _word = first_word_slice_to_slice(&my_string_literal[..]);
+    let word = first_word_slice_to_slice(&my_string_literal[..]);
 
     // Because string literals *are* string slices already,
     // this works too, without the slice syntax!
-    let _word = first_word_slice_to_slice(my_string_literal);
+    let word = first_word_slice_to_slice(my_string_literal);
 
     // Other Slices
 
     let a = [1, 2, 3, 4, 5];
-    let _slice = &a[1..3];
+    let slice = &a[1..3];
 }

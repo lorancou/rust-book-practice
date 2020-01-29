@@ -1,3 +1,5 @@
+#![allow(unused_variables)]
+
 fn main() {
     // NB: putting functions inline from now on to try to follow the book's flow
 
@@ -25,7 +27,7 @@ fn main() {
         //println!("{}, world!", s1); // won't compile, s1 is invalidated
 
         let s1 = String::from("hello");
-        let _s2 = s1.clone(); // clone = deep copy
+        let s2 = s1.clone(); // clone = deep copy
         println!("{}, world!", s1); // OK, s1 still valid, will print `hello, world!`
     }
 
@@ -59,15 +61,15 @@ fn main() {
             some_string // some_string is returned and moves out to the calling function
         }
 
-        let _s1 = gives_ownership(); // gives_ownership moves its return value into s1
+        let s1 = gives_ownership(); // gives_ownership moves its return value into s1
 
-        let _s2 = String::from("hello"); // s2 comes into scope
+        let s2 = String::from("hello"); // s2 comes into scope
 
         fn takes_and_gives_back(a_string: String) -> String { // a_string comes into scope
             a_string  // a_string is returned and moves out to the calling function
         }
 
-        let _s3 = takes_and_gives_back(_s2); // s2 is moved into takes_and_gives_back, which also moves its return value into s3
+        let s3 = takes_and_gives_back(s2); // s2 is moved into takes_and_gives_back, which also moves its return value into s3
     } // Here, _s3 goes out of scope and is dropped.
       // _s2 goes out of scope but was moved, so nothing happens.
       // _s1 goes out of scope and is dropped.
