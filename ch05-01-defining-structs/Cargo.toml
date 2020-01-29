@@ -1,5 +1,5 @@
 [package]
-name = "defining-structs"
+name = "ch05-01-defining-structs"
 version = "0.1.0"
 authors = ["Laurent Couvidou <lorancou@free.fr>"]
 edition = "2018"

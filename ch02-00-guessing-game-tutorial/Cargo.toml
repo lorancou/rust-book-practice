@@ -1,7 +1,8 @@
 [package]
-name = "functions"
+name = "ch02-00-guessing-game-tutorial"
 version = "0.1.0"
 authors = ["Laurent Couvidou <lorancou@free.fr>"]
 edition = "2018"
 
 [dependencies]
+rand = "0.5.5"

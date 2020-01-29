@@ -1,5 +1,5 @@
 [package]
-name = "control-flow"
+name = "ch03-05-control-flow"
 version = "0.1.0"
 authors = ["Laurent Couvidou <lorancou@free.fr>"]
 edition = "2018"

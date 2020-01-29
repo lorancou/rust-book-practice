@@ -6,6 +6,13 @@ version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
+name = "ch02-00-guessing-game-tutorial"
+version = "0.1.0"
+dependencies = [
+ "rand 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "cloudabi"
 version = "0.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -17,13 +24,6 @@ dependencies = [
 name = "fuchsia-cprng"
 version = "0.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-
-[[package]]
-name = "guessing_game"
-version = "0.1.0"
-dependencies = [
- "rand 0.5.6 (registry+https://github.com/rust-lang/crates.io-index)",
-]
 
 [[package]]
 name = "libc"

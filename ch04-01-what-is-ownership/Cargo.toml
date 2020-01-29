@@ -1,5 +1,5 @@
 [package]
-name = "fibonacci"
+name = "ch04-01-what-is-ownership"
 version = "0.1.0"
 authors = ["Laurent Couvidou <lorancou@free.fr>"]
 edition = "2018"

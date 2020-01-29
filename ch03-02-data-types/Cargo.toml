@@ -1,5 +1,5 @@
 [package]
-name = "data-types"
+name = "ch03-02-data-types"
 version = "0.1.0"
 authors = ["Laurent Couvidou <lorancou@free.fr>"]
 edition = "2018"

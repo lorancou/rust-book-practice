@@ -1,5 +1,5 @@
 [package]
-name = "twelve-days"
+name = "ch03-05ex3-twelve-days"
 version = "0.1.0"
 authors = ["Laurent Couvidou <lorancou@free.fr>"]
 edition = "2018"

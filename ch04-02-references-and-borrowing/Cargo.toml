@@ -1,5 +1,5 @@
 [package]
-name = "references-and-borrowing"
+name = "ch04-02-references-and-borrowing"
 version = "0.1.0"
 authors = ["Laurent Couvidou <lorancou@free.fr>"]
 edition = "2018"

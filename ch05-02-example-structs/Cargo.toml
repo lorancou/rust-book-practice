@@ -1,5 +1,5 @@
 [package]
-name = "example-structs"
+name = "ch05-02-example-structs"
 version = "0.1.0"
 authors = ["Laurent Couvidou <lorancou@free.fr>"]
 edition = "2018"
