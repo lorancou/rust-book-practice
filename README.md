@@ -7,3 +7,5 @@ Everything should compile without warning and binaries should run:
   - Code samples that are not functional are commented out.
 
 For code samples from the "core" text, functions and structs declarations are often inlined straight in the main() function body to follow the book reading flow. This might feel a little awkward, but the idea is to prevent mixing up concepts to much. Coding exercises that sometimes come at the end of a chapter ("exN") are written using a more "traditional" fashion.
+
+I intend to use this as future reference, but if that's of any use for you then help yourself. The coding exercises "solutions" might help, but I offer no warranty whatsoever that they are the best ones 😉. Feel free to make pull requests if you find errors, or have better solutions to suggest.
