@@ -12,10 +12,11 @@ fn to_fahrenheit(celsius : f64) -> f64 {
 
 fn main() {
     let args: Vec<String> = env::args().collect();
+    let usage = format!("Usage: {} <n> <°C|°F>", args[0]);
 
     if args.len() != 3 {
         println!("Wrong argument count.");
-        println!("Usage: degrees <n> <°C|°F>");
+        println!("{}", usage);
         return;
     }
 
@@ -23,7 +24,7 @@ fn main() {
         Ok(n) => n,
         Err(_) => {
             println!("First argument must be a number.");
-            println!("Usage: degrees <n> <°C|°F>");
+            println!("{}", usage);
             return;
         }
     };
@@ -33,7 +34,7 @@ fn main() {
         "°F" => println!("{} °F = {} °C", n, to_celsius(n)),
         _ => {
             println!("Second argument must be \"°C\" or \"°F\".");
-            println!("Usage: degrees <n> <°C|°F>");
+            println!("{}", usage);
         },
     }
 }

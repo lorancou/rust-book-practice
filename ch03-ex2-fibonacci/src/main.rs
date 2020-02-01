@@ -4,10 +4,11 @@ use std::env;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
+    let usage = format!("Usage: {} <n>", args[0]);
 
     if args.len() != 2 {
         println!("Wrong argument count.");
-        println!("Usage: fibonacci <n>");
+        println!("{}", usage);
         return;
     }
 
@@ -15,7 +16,7 @@ fn main() {
         Ok(num) => num,
         Err(_) => {
             println!("Not an u32.");
-            println!("Usage: fibonacci <n>");
+            println!("{}", usage);
             return;
         }
     };

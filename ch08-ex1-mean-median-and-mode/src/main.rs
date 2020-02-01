@@ -7,7 +7,6 @@ use std::env;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-
     let usage = format!("Usage: {} <n0> <n1> <n2> ...", args[0]);
 
     let count = args.len() - 1;
