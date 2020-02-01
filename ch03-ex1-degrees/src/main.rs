@@ -1,3 +1,5 @@
+// Convert temperatures between Fahrenheit and Celsius.
+
 use std::env;
 
 fn to_celsius(fahrenheit : f64) -> f64 {

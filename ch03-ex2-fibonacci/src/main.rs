@@ -1,3 +1,5 @@
+// Generate the nth Fibonacci number.
+
 use std::env;
 
 fn main() {

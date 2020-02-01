@@ -1,5 +1,10 @@
+// Print the lyrics to the Christmas carol “The Twelve Days of Christmas,”
+// taking advantage of the repetition in the song.
+
+// Lyrics taken from:
+// https://en.wikipedia.org/wiki/The_Twelve_Days_of_Christmas_(song)
+
 fn main() {
-    // Lyrics taken from https://en.wikipedia.org/wiki/The_Twelve_Days_of_Christmas_(song)
 
     const DAY_COUNT : usize = 12;
 
