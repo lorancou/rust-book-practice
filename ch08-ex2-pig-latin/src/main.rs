@@ -3,6 +3,9 @@
 // that start with a vowel have “hay” added to the end instead (“apple” becomes
 // “apple-hay”). Keep in mind the details about UTF-8 encoding!
 
+// cargo run -- "Enjoy, the first apple from a God!"
+// Enjoy-hay, he-tay irst-fay apple-hay rom-fay a-hay Od-gay!
+
 use std::env;
 
 fn main() {
@@ -24,89 +27,43 @@ fn main() {
         }
     };
 
-    // My first attempt, lots of bools and ifs and elses
-    // "The first apple of Brian."
-    // -> He-tay irst-fay apple-hay of-hay Rian-bay.
     let mut output = String::new();
-    let mut word_chunk = String::new();
-    let mut first_consonant: Option<char> = None;
-    let mut next_uppercase = false;
-    let mut found_letter = false;
-    for c in input.chars() {
-        if c.is_alphabetic() {
-            if !found_letter {
-                let lowercase_c = c.to_ascii_lowercase();
-                if let 'a' | 'e' | 'i' | 'o' | 'u' = lowercase_c {
-                    first_consonant = None;
-                    word_chunk.push(c);
-                } else {
-                    if c == lowercase_c {
-                        first_consonant = Some(c);
-                    } else {
-                        next_uppercase = true;
-                        first_consonant = Some(lowercase_c);
-                    }
-                }
-                found_letter = true;
-            } else if next_uppercase {
-                word_chunk.push(c.to_ascii_uppercase());
-                next_uppercase = false;
-            } else {
-                word_chunk.push(c);
-            }
-        } else {
-            if found_letter {
-                if let Some(f) = first_consonant {
-                    let new_word = format!("{}-{}ay", word_chunk, f);
-                    output += &new_word;
-                } else {
-                    let new_word = format!("{}-hay", word_chunk);
-                    output += &new_word;
-                }
-            }
-            output.push(c);
-            word_chunk.clear();
-            first_consonant = None;
-            next_uppercase = false;
-            found_letter = false;
-        }
-    }
-    println!("{}", output);
-
-    // Found online, way shorter and cleaner, but warns at compilation and doesn't handle case
-    // https://codereview.stackexchange.com/questions/172866/pig-latin-exercise-in-rust/172910
-    // "The first apple of Brian."
-    // -> he-Tay irst-fay apple-hay of-hay rian-Bay.
     let mut chars = input.chars().peekable();
-    let mut output = String::new();
     while let Some(c) = chars.next() {
-        let suffix = match c {
-            'a' | 'e' | 'i' | 'o' | 'u' => {
-                output.push(c);
-                String::from("-hay")
-            }
-            'a'...'z' | 'A'...'Z' => {
-                format!("-{}ay", c)
-            }
-            _ => {
-                output.push(c);
-                continue;
-            }
+        // Copy anything that's not a letter.
+        if !c.is_ascii_alphabetic() {
+            output.push(c);
+            continue;
+        }
+
+        // Build a suffix depending of if we found a vowel or a consonant. If
+        // that's a vowel, copy it. For word beginning with a capital consonant,
+        // capitalizes the beginning of the "pig-latin word" instead.
+        let lowercase_c = c.to_ascii_lowercase();
+        let mut uppercase_consonant = false;
+        let suffix = if let 'a' | 'e' | 'i' | 'o' | 'u' = lowercase_c {
+            output.push(c);
+            String::from("-hay")
+        } else {
+            uppercase_consonant = c != lowercase_c;
+            format!("-{}ay", lowercase_c)
         };
 
+        // Copy the rest of the word and apply the suffix when the next
+        // character is not a letter.
         while let Some(&c) = chars.peek() {
-            match c {
-                'a'...'z' | 'A'...'Z' => {
-                    chars.next();
-                    output.push(c);
-                }
-                _ => break,
+            if !c.is_ascii_alphabetic() {
+                break;
+            }
+            chars.next();
+            if uppercase_consonant {
+                output.push(c.to_ascii_uppercase());
+                uppercase_consonant = false;
+            } else {
+                output.push(c);
             }
         }
-
         output += &suffix;
     }
     println!("{}", output);
 }
-
-
