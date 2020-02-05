@@ -36,9 +36,10 @@ fn main() {
             continue;
         }
 
-        // Build a suffix depending of if we found a vowel or a consonant. If
-        // that's a vowel, copy it. For word beginning with a capital consonant,
-        // capitalizes the beginning of the "pig-latin word" instead.
+        // Build a suffix depending on if we found a vowel or a consonant. If
+        // that's a vowel, copy it. For words beginning with an uppercase
+        // consonant, remember that we have to start the "pig-latin word" with
+        // an uppercase letter.
         let lowercase_c = c.to_ascii_lowercase();
         let mut uppercase_consonant = false;
         let suffix = if let 'a' | 'e' | 'i' | 'o' | 'u' = lowercase_c {
@@ -49,8 +50,7 @@ fn main() {
             format!("-{}ay", lowercase_c)
         };
 
-        // Copy the rest of the word and apply the suffix when the next
-        // character is not a letter.
+        // Copy the rest of the word and append the suffix.
         while let Some(&c) = chars.peek() {
             if !c.is_ascii_alphabetic() {
                 break;
