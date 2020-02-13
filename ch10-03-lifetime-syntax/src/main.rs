@@ -107,6 +107,7 @@ fn main() {
         x
     }
     // -> OK, no reference to y returned
+    // Allows this: https://stackoverflow.com/a/31609892/1005455
 
     /*
     fn return_long_string<'a>(x: &str, y: &str) -> &'a str {
