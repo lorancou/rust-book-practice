@@ -4,8 +4,8 @@ use std::fs;
 
 pub struct Config {
     pub query: String,
-    pub filename: String,
-    pub case_sensitive: bool,
+    pub file_path: String,
+    pub ignore_case: bool,
 }
 
 impl Config {
@@ -15,33 +15,37 @@ impl Config {
         }
 
         let query = args[1].clone();
-        let filename = args[2].clone();
+        let file_path = args[2].clone();
 
-        let case_sensitive = if args.len() >= 4 {
+        // For another exercise on your own, try controlling case sensitivity through either a
+        // command line argument or an environment variable. Decide whether the command line
+        // argument or the environment variable should take precedence if the program is run with
+        // one set to case sensitive and one set to ignore case.
+        let ignore_case = if args.len() >= 4 {
             match &args[3][..] {
-                "--case-sensitive" => false,
-                "-c" => false,
-                _ => true,
+                "--ignore-case" => true,
+                "-i" => true,
+                _ => false,
             }
         } else {
-            env::var("CASE_INSENSITIVE").is_err()
+            env::var("IGNORE_CASE").is_ok()
         };
 
         Ok(Config {
             query,
-            filename,
-            case_sensitive,
+            file_path,
+            ignore_case,
         })
     }
 }
 
 pub fn run(config: Config) -> Result<(), Box<dyn Error>> {
-    let contents = fs::read_to_string(config.filename)?;
+    let contents = fs::read_to_string(config.file_path)?;
 
-    let results = if config.case_sensitive {
-        search(&config.query, &contents)
-    } else {
+    let results = if config.ignore_case {
         search_case_insensitive(&config.query, &contents)
+    } else {
+        search(&config.query, &contents)
     };
 
     for line in results {
@@ -81,7 +85,7 @@ mod tests {
     use super::*;
 
     #[test]
-    fn case_sensitive () {
+    fn ignore_case () {
         let query = "duct";
         let contents = "\
 Rust:
