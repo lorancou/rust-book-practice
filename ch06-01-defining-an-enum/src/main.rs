@@ -1,3 +1,6 @@
+// Defining an Enum
+// https://doc.rust-lang.org/book/ch06-01-defining-an-enum.html
+
 #![allow(dead_code)]
 #![allow(unused_variables)]
 

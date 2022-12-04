@@ -1,3 +1,4 @@
+// To panic! or Not to panic!
 // https://doc.rust-lang.org/book/ch09-03-to-panic-or-not-to-panic.html
 
 #![allow(unused_variables)]
@@ -5,7 +6,6 @@
 use std::io;
 
 fn main() {
-    // To panic! or Not to panic!
 
     // Cases in Which You Have More Information Than the Compiler
 

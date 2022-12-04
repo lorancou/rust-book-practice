@@ -1,3 +1,6 @@
+// Closures: Anonymous Functions that Capture Their Environment
+// https://doc.rust-lang.org/book/ch13-01-closures.html
+
 use std::thread;
 use std::time::Duration;
 

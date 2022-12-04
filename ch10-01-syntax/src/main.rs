@@ -1,10 +1,10 @@
+// Generic Data Types
 // https://doc.rust-lang.org/book/ch10-01-syntax.html
 
 #![allow(dead_code)]
 #![allow(unused_variables)]
 
 fn main() {
-    // Generic Data Types
 
     // In Function Definitions
 

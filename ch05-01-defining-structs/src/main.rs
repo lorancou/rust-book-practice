@@ -1,3 +1,6 @@
+// Defining and Instantiating Structs
+// https://doc.rust-lang.org/book/ch05-01-defining-structs.html
+
 #![allow(unused_variables)]
 
 fn main() {

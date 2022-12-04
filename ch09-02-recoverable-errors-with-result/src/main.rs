@@ -1,3 +1,4 @@
+// Recoverable Errors with Result
 // https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html
 
 #![allow(dead_code)]
@@ -9,7 +10,6 @@ use std::fs::{self,File};
 use std::io::{self,ErrorKind,Read};
 
 fn main() {
-    // Recoverable Errors with Result
 
     let f = File::open("hello.txt");
 

@@ -1,3 +1,4 @@
+// Validating References with Lifetimes
 // https://doc.rust-lang.org/book/ch10-03-lifetime-syntax.html
 
 #![allow(dead_code)]
@@ -6,7 +7,6 @@
 use std::fmt::Display;
 
 fn main() {
-    // Validating References with Lifetimes
 
     // Preventing Dangling References with Lifetimes
 

@@ -1,5 +1,7 @@
+// An Example Program Using Structs
+// https://doc.rust-lang.org/book/ch05-02-example-structs.html
+
 fn main() {
-    // An Example Program Using Structs
 
     let width1 = 30;
     let height1 = 50;

@@ -1,3 +1,4 @@
+// Traits: Defining Shared Behavior
 // https://doc.rust-lang.org/book/ch10-02-traits.html
 
 #![allow(dead_code)]
@@ -7,7 +8,8 @@ use std::fmt::Debug;
 use std::fmt::Display;
 
 fn main() {
-    // Traits: Defining Shared Behavior
+
+    // Implementing a Trait on a Type
 
     pub struct Tweet {
         pub username: String,

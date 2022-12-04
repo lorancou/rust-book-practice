@@ -1,9 +1,11 @@
+// Concise Control Flow with if let
+// https://doc.rust-lang.org/book/ch06-03-if-let.html
+
 #![allow(dead_code)]
 #![allow(unused_assignments)]
 #![allow(unused_variables)]
 
 fn main() {
-    // Concise Control Flow with if let
 
     {
         let some_u8_value = Some(3u8);

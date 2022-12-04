@@ -1,6 +1,5 @@
-// https://doc.rust-lang.org/book/ch11-03-test-organization.html
-
 // Test Organization
+// https://doc.rust-lang.org/book/ch11-03-test-organization.html
 
 pub fn add_two(a: i32) -> i32 { // Public
     internal_adder(a, 2)

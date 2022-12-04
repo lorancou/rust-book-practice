@@ -1,6 +1,8 @@
+// Generic Types, Traits, and Lifetimes
 // https://doc.rust-lang.org/book/ch10-00-generics.html
 
 fn main() {
+    
     // Removing Duplication by Extracting a Function
 
     let number_list = vec![34, 50, 25, 100, 65];

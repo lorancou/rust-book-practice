@@ -1,3 +1,6 @@
+// Storing UTF-8 Encoded Text with Strings
+// https://doc.rust-lang.org/book/ch08-02-strings.html
+
 #![allow(unused_mut)]
 #![allow(unused_variables)]
 

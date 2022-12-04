@@ -1,10 +1,10 @@
+// How to Write Tests
 // https://doc.rust-lang.org/book/ch11-01-writing-tests.html
 
 #![allow(dead_code)]
 
 #[cfg(test)]
 mod tests {
-    // How to Write Tests
 
     // The Anatomy of a Test Function
 
