@@ -25,7 +25,7 @@ impl Config {
             match &args[3][..] {
                 "--ignore-case" => true,
                 "-i" => true,
-                _ => false,
+                _ => return Err("invalid argument"),
             }
         } else {
             env::var("IGNORE_CASE").is_ok()
