@@ -1,0 +1,9 @@
+[package]
+name = "rust_book_publish"
+version = "0.1.0"
+authors = ["Laurent Couvidou <hello@lorancou.net>"]
+edition = "2021"
+description = "Test crate for the Publishing a Crate to Crates section of The Rust Book"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
