@@ -1,9 +1,12 @@
 // An I/O Project: Building a Command Line Program
 // https://doc.rust-lang.org/book/ch12-00-an-io-project.html
 
-// cargo run frog poem.txt
-// cargo run body poem.txt
-// cargo run monomorphization poem.txt
+// Test commands:
+// > cargo run frog poem.txt
+// > cargo run body poem.txt
+// > cargo run monomorphization poem.txt
+// > cargo run to poem.txt
+// > cargo run to poem.txt --i
 
 use std::env;
 use std::process;

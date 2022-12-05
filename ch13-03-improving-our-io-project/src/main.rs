@@ -1,9 +1,12 @@
 // Improving Our I/O Project
 // https://doc.rust-lang.org/book/ch13-03-improving-our-io-project.html
 
-// cargo run frog poem.txt
-// cargo run body poem.txt
-// cargo run monomorphization poem.txt
+// Test commands:
+// > cargo run frog poem.txt
+// > cargo run body poem.txt
+// > cargo run monomorphization poem.txt
+// > cargo run to poem.txt
+// > cargo run to poem.txt --i
 
 use std::env;
 use std::process;
