@@ -1,3 +1,6 @@
+// Publishing a Crate to Crates.io
+// https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html
+
 //use rust_book_publish::kinds::PrimaryColor;
 //use rust_book_publish::utils::mix;
 
