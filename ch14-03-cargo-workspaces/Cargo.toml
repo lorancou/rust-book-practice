@@ -1,6 +1,6 @@
 [workspace]
 
+# Not specifying add_one and add_two here as this seems optional. Only the bin target seems required?
 members = [
-    "adder",
-    "add_one",
+    "adder"
 ]
